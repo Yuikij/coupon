@@ -15,6 +15,7 @@ public interface CouponTemplateDao
         extends JpaRepository<CouponTemplate, Long> {
 
     // 根据Shop ID查询出所有券模板
+    // 通过接口名查询
     List<CouponTemplate> findAllByShopId(Long shopId);
 
     // IN查询 + 分页支持的语法
@@ -27,4 +28,9 @@ public interface CouponTemplateDao
     @Modifying
     @Query("update CouponTemplate c set c.available = 0 where c.id = :id")
     int makeCouponUnavailable(@Param("id") Long id);
+
+    /**
+     * 条件查询
+     * couponTemplate.setName(" 查询名称"); templateDao.findAll( Example.of( couponTemplate));
+     * */
 }

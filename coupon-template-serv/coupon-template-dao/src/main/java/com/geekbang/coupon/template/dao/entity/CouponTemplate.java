@@ -21,6 +21,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+//声明了“ 数据库实体” 对象， 它是数据库 Table 在程序中的映射对象；
 @Entity
 @Builder
 @EntityListeners(AuditingEntityListener.class)

@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!--    spring-boot-starter-parent 定义的版本信息会自动带入到子模块 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -11,6 +12,7 @@
 
     <groupId>com.geekbang</groupId>
     <artifactId>geekbang-coupon</artifactId>
+    <!--    jar,war,pom  pom顶层战略，不包含业务实现 -->
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
@@ -24,7 +26,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-
+    <!--向下传递版本信息 -->
     <dependencyManagement>
         <dependencies>
             <dependency>

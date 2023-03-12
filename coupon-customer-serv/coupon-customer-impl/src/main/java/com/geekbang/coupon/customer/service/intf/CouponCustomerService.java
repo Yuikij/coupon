@@ -8,7 +8,6 @@ import com.geekbang.coupon.customer.api.beans.RequestCoupon;
 import com.geekbang.coupon.customer.api.beans.SearchCoupon;
 import com.geekbang.coupon.customer.dao.entity.Coupon;
 import com.geekbang.coupon.template.api.beans.CouponInfo;
-import io.micrometer.core.instrument.search.Search;
 
 import java.util.List;
 
