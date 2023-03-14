@@ -1,5 +1,6 @@
 package com.geekbang.coupon.customer.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.geekbang.coupon.calculation.api.beans.ShoppingCart;
 import com.geekbang.coupon.calculation.api.beans.SimulationOrder;
 import com.geekbang.coupon.calculation.api.beans.SimulationResponse;
@@ -32,6 +33,7 @@ public class CouponCustomerController {
     private CouponCustomerService customerService;
 
     @PostMapping("requestCoupon")
+    @SentinelResource(value = "requestCoupon", fallback = "getNothing")
     public Coupon requestCoupon(@Valid @RequestBody RequestCoupon request) {
         if (disableCoupon) {
             log.info("暂停领取优惠券");
@@ -55,6 +57,7 @@ public class CouponCustomerController {
 
     // ResponseEntity - 指定返回状态码 - 可以作为一个课后思考题
     @PostMapping("placeOrder")
+    @SentinelResource(value = "checkout")
     public ShoppingCart checkout(@Valid @RequestBody ShoppingCart info) {
         return customerService.placeOrder(info);
     }
@@ -62,6 +65,7 @@ public class CouponCustomerController {
 
     // 实现的时候最好封装一个search object类
     @PostMapping("findCoupon")
+    @SentinelResource(value = "customer-findCoupon")
     public List<CouponInfo> findCoupon(@Valid @RequestBody SearchCoupon request) {
         return customerService.findCoupon(request);
     }

@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 192.168.2.5:8848
+        server-addr: 172.23.104.184:8848
         file-extension: yml
         # prefix: 文件名前缀，默认是spring.application.name
         # 如果没有指定命令空间，则默认命令空间为PUBLIC
