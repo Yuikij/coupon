@@ -74,7 +74,8 @@ spring:
         port: 8719
         # dashboard地址
         dashboard: 172.23.104.184:8090
-        clientIp: 172.23.75.71
+        clientIp: 172.23.11.157
+#        clientIp: 172.23.75.71
 #      datasource:
 #        # 限流的规则key是flow
 #        geekbang-flow:
