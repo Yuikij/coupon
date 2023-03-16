@@ -31,3 +31,4 @@ spring:
           - dataId: rabbitmq-config.yml
             group: EXT_GROUP
             refresh: true
+
