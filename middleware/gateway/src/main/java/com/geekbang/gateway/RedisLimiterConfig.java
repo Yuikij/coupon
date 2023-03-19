@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 
 @Configuration
 public class RedisLimiterConfig {
-
+//限流的维度
     @Bean
     @Primary
     public KeyResolver remoteHostLimiterKey() {
@@ -21,8 +21,10 @@ public class RedisLimiterConfig {
         );
     }
 
+//    限流规则
     @Bean("tempalteRateLimiter")
     public RedisRateLimiter templateRateLimiter() {
+//        每秒发放的令牌数量，令牌桶的总量
         return new RedisRateLimiter(10, 20);
     }
 

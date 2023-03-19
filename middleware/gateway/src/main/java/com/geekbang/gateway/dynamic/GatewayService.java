@@ -13,6 +13,9 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
+/**
+ * 将变化后的路由信息添加到网关上下文
+ */
 @Slf4j
 @Service
 public class GatewayService {
@@ -23,6 +26,10 @@ public class GatewayService {
     @Autowired
     private ApplicationEventPublisher publisher;
 
+
+    /**
+     * @param routes 封装路由规则的标准类
+     */
     public void updateRoutes(List<RouteDefinition> routes) {
         if (CollectionUtils.isEmpty(routes)) {
             log.info("No routes found");

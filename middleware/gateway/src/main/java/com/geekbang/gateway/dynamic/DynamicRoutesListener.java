@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.concurrent.Executor;
 
+/**
+ * 实现了nacos的标准监听器
+ */
 @Slf4j
 @Component
 public class DynamicRoutesListener implements Listener {
@@ -23,6 +26,9 @@ public class DynamicRoutesListener implements Listener {
         return null;
     }
 
+    /**
+     * 使用json转换，将plain text变成RouteDefinition
+     */
     @Override
     public void receiveConfigInfo(String configInfo) {
         log.info("received routes changes {}", configInfo);

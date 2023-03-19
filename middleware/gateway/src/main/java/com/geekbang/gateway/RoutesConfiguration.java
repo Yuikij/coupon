@@ -33,6 +33,7 @@ public class RoutesConfiguration {
     public RouteLocator declare(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(route -> route.path("/gateway/coupon-customer/**")
+//                      将path访问路径的第一个前置子路径删除 -> coupon-customer/**
                         .filters(f -> f.stripPrefix(1)
                             .requestRateLimiter(limiter-> {
                                 limiter.setKeyResolver(hostAddrKeyResolver);
@@ -41,6 +42,7 @@ public class RoutesConfiguration {
                             }
                             )
                         )
+                        //转发到服务
                         .uri("lb://coupon-customer-serv")
                 ).route(route -> route
                         // 如果一个请求命中了多个路由，order越小的路由优先级越高
