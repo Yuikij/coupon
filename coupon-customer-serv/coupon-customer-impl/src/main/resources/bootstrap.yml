@@ -31,4 +31,11 @@ spring:
           - dataId: rabbitmq-config.yml
             group: EXT_GROUP
             refresh: true
+          - dataId: coupon-customer-serv-stream.yml
+            group: stream
+            refresh: true
+        shared-configs:
+          - dataId: common.yml
+            group: coupon
+            refresh: true
 
