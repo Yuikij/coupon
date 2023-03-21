@@ -1,6 +1,6 @@
 spring:
   application:
-    name: coupon-customer-serv
+    name: coupon-template-serv
   cloud:
     nacos:
       config:
@@ -31,10 +31,10 @@ spring:
           - dataId: rabbitmq-config.yml
             group: EXT_GROUP
             refresh: true
-          - dataId: coupon-customer-serv-stream.yml
-            group: stream
-            refresh: true
-          - dataId: coupon-customer-serv-seata.yml
+#          - dataId: coupon-template-serv-stream.yml
+#            group: stream
+#            refresh: true
+          - dataId: coupon-template-serv-seata.yml
             group: seata
             refresh: true
         shared-configs:

@@ -35,13 +35,15 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            # 授信地址列表
+            # 授信地址列表，Header中的Origin和list比较
             allowed-origins:
               - "http://localhost:10000"
               - "https://www.baidu.com"
             # cookie, authorization认证信息
             expose-headers: "*"
+#            支持跨域的方法
             allowed-methods: "*"
+#            是否包含cookie
             allow-credentials: true
             allowed-headers: "*"
 #        add-to-simple-url-handler-mapping: true

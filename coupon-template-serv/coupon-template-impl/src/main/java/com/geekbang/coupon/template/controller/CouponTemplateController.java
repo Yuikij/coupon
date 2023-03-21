@@ -87,4 +87,6 @@ public class CouponTemplateController {
         log.info("Load template, id={}", id);
         couponTemplateService.deleteTemplate(id);
     }
+
+
 }
